@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 1140px;
+            margin: auto;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        .contant{
+            width: 80%;
+            text-align: center;
+        }
+        .contant h1{
+            background-color: #d9edf7;
+            padding: 10px 0px;
+            border-radius: 4px 50px ;
+            color: #424d61;
+            box-shadow: 4px 4px  #424d61;
+        }
+        .text{
+            width: 100%;
+            margin-top: 7px;
+            font-size: 1.3rem;
+            border: 1px solid black;
+            border-radius: 4px 50px ;
+            padding: 5px 10px;
+            color: #424d61;
+        }
+        .contant p{
+            background-color: #d9edf7;
+            border-radius: 4px 50px ;
+            padding: 10px 0px;
+            font-size: 1.5rem;
+            color: #424d61;
+            box-shadow: 4px 4px  #424d61;
+        }
+        span{
+            color: red;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        b{
+            margin: 0px 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contant">
+            <h1>Word And Character  Counter</h1>
+            <textarea name="" id="text" cols="30" rows="10" class="text"></textarea>
+            <p><span id="word"> 0 </span> word <b> AND </b> 
+            <span id="char">0</span> character </p>
+        </div>
+     </div>
+
+    <script type="text/javascript">
+
+        var textbox  = document.getElementById("text");
+        text.addEventListener("input" , function(){
+            let usertext = text.value;
+            document.getElementById("char").innerHTML = usertext.length;
+
+
+            usertext = usertext.trim();
+            let userword = usertext.split(" ");
+
+            let cleanList = userword.filter(function(ele){
+                return ele != "";
+            });
+            document.getElementById("word").innerHTML = cleanList.length;
+        })
+    </script>
+</body>
+</html>
